@@ -9,8 +9,11 @@
         $data = $_POST['word-entry'];
         //parse and clean the data of trailing whitespace
         $cleanData = trim($data, "\t\n\r\0\x0B");
-        //post the data to the queue with newline
-        $ret = file_put_contents('queue.txt', strtoupper($cleanData . "\n"), FILE_APPEND);
+        //check that the data field is not empty
+        if ($cleanData != "") {
+            //post the data to the queue with newline
+            $ret = file_put_contents('queue.txt', strtoupper($cleanData . "\n"), FILE_APPEND);
+        }
     }
     //redirect to next page based off page id 
     if ($id == 1) {
