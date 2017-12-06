@@ -18,13 +18,13 @@
     <div id="main">
         
         <form action="enqueue.php" method="POST" >
-            <div class="entry-prompt larger">In three words, tell this environment something.</div>
+            
+            <div class="entry-prompt larger">Describe this place with an adjective.</div>
             <div id="identifier" style="visibility: hidden;"><input type="word-entry" name="id" value="2"></div>
-
-            <div><input name="word-entry" class="text-entry" type="text" 
-                        pattern="(?=\S*['-]?)([a-zA-Z'-]+)(\s{1})?(?=\S*['-]?)([a-zA-Z'-]+)?(\s{1})?(?=\S*['-]?)([a-zA-Z'-]+)?" 
-                        oninvalid="setCustomValidity('Please limit your response to three words (no special characters or spaces afterward)')"
+            <div><input name="word-entry" class="text-entry" type="text" pattern="(?=\S*['-]?)([a-zA-Z'-]+)" 
+                        oninvalid="setCustomValidity('Please limit your response to one word (no spaces or special characters)')"
                         onchange="try{setCustomValidity('')}catch(e){}"></div>
+            
 
             <div><input class="button" type="submit" name="Submit" value="→"></div>
         </form>
